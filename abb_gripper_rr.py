@@ -23,7 +23,7 @@ class create_gripper(object):
         
 with RR.ServerNodeSetup("abb_gripper",50500) as node_setup:
     parser = argparse.ArgumentParser(description="G2 Gripper Driver for Robot Raconteur")
-    parser.add_argument("--tool-info-file", type=argparse.FileType('r'),default=None,required=True,help="Tool info file (required)")
+    parser.add_argument("--tool-info-file", type=argparse.FileType('r'),default="soft_gripper_default_config.yml",required=True,help="Tool info file (required)")
     args, _ = parser.parse_known_args()
 
     RRC.RegisterStdRobDefServiceTypes(RRN)
